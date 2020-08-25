@@ -1,0 +1,4026 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ejb-jar version="2.1" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/ejb-jar_2_1.xsd">
+  <enterprise-beans>
+        <session>
+            <display-name>SControlSB</display-name>
+            <ejb-name>SControlBean</ejb-name>
+            <local-home>stockcontrolsession.SControlLocalHome</local-home>
+            <local>stockcontrolsession.SControlLocal</local>
+            <ejb-class>stockcontrolsession.SControlBean</ejb-class>
+            <session-type>Stateless</session-type>
+            <transaction-type>Container</transaction-type>
+            <ejb-local-ref>
+                <ejb-ref-name>UserloginBean</ejb-ref-name>
+                <ejb-ref-type>Entity</ejb-ref-type>
+                <local-home>stockcontrolentity.UserloginLocalHome</local-home>
+                <local>stockcontrolentity.UserloginLocal</local>
+                <ejb-link>UserloginBean</ejb-link>
+            </ejb-local-ref>
+      
+            <ejb-local-ref>
+                <ejb-ref-name>DistributorBean</ejb-ref-name>
+                <ejb-ref-type>Entity</ejb-ref-type>
+                <local-home>stockcontrolentity.DistributorLocalHome</local-home>
+                <local>stockcontrolentity.DistributorLocal</local>
+                <ejb-link>DistributorBean</ejb-link>
+            </ejb-local-ref>
+            <ejb-local-ref>
+                <ejb-ref-name>LgaBean</ejb-ref-name>
+                <ejb-ref-type>Entity</ejb-ref-type>
+                <local-home>stockcontrolentity.LgaLocalHome</local-home>
+                <local>stockcontrolentity.LgaLocal</local>
+                <ejb-link>LgaBean</ejb-link>
+            </ejb-local-ref>
+            <ejb-local-ref>
+                <ejb-ref-name>NationalityBean</ejb-ref-name>
+                <ejb-ref-type>Entity</ejb-ref-type>
+                <local-home>stockcontrolentity.NationalityLocalHome</local-home>
+                <local>stockcontrolentity.NationalityLocal</local>
+                <ejb-link>NationalityBean</ejb-link>
+            </ejb-local-ref>
+            <ejb-local-ref>
+                <ejb-ref-name>ProductionBean</ejb-ref-name>
+                <ejb-ref-type>Entity</ejb-ref-type>
+                <local-home>stockcontrolentity.ProductionLocalHome</local-home>
+                <local>stockcontrolentity.ProductionLocal</local>
+                <ejb-link>ProductionBean</ejb-link>
+            </ejb-local-ref>
+            <ejb-local-ref>
+                <ejb-ref-name>RolesBean</ejb-ref-name>
+                <ejb-ref-type>Entity</ejb-ref-type>
+                <local-home>stockcontrolentity.RolesLocalHome</local-home>
+                <local>stockcontrolentity.RolesLocal</local>
+                <ejb-link>RolesBean</ejb-link>
+            </ejb-local-ref>
+            <ejb-local-ref>
+                <ejb-ref-name>StaffBean</ejb-ref-name>
+                <ejb-ref-type>Entity</ejb-ref-type>
+                <local-home>stockcontrolentity.StaffLocalHome</local-home>
+                <local>stockcontrolentity.StaffLocal</local>
+                <ejb-link>StaffBean</ejb-link>
+            </ejb-local-ref>
+            <ejb-local-ref>
+                <ejb-ref-name>StateoforiginBean</ejb-ref-name>
+                <ejb-ref-type>Entity</ejb-ref-type>
+                <local-home>stockcontrolentity.StateoforiginLocalHome</local-home>
+                <local>stockcontrolentity.StateoforiginLocal</local>
+                <ejb-link>StateoforiginBean</ejb-link>
+            </ejb-local-ref>
+            <ejb-local-ref>
+                <ejb-ref-name>StockBean</ejb-ref-name>
+                <ejb-ref-type>Entity</ejb-ref-type>
+                <local-home>stockcontrolentity.StockLocalHome</local-home>
+                <local>stockcontrolentity.StockLocal</local>
+                <ejb-link>StockBean</ejb-link>
+            </ejb-local-ref>
+            <ejb-local-ref>
+                <ejb-ref-name>SupplyBean</ejb-ref-name>
+                <ejb-ref-type>Entity</ejb-ref-type>
+                <local-home>stockcontrolentity.SupplyLocalHome</local-home>
+                <local>stockcontrolentity.SupplyLocal</local>
+                <ejb-link>SupplyBean</ejb-link>
+            </ejb-local-ref>
+            <ejb-local-ref>
+                <ejb-ref-name>UnitBean</ejb-ref-name>
+                <ejb-ref-type>Entity</ejb-ref-type>
+                <local-home>stockcontrolentity.UnitLocalHome</local-home>
+                <local>stockcontrolentity.UnitLocal</local>
+                <ejb-link>UnitBean</ejb-link>
+            </ejb-local-ref>
+            <ejb-local-ref>
+                <ejb-ref-name>MaterialsBean</ejb-ref-name>
+                <ejb-ref-type>Entity</ejb-ref-type>
+                <local-home>stockcontrolentity.MaterialsLocalHome</local-home>
+                <local>stockcontrolentity.MaterialsLocal</local>
+                <ejb-link>MaterialsBean</ejb-link>
+            </ejb-local-ref>
+            <ejb-local-ref>
+                <ejb-ref-name>DbBean</ejb-ref-name>
+                <ejb-ref-type>Entity</ejb-ref-type>
+                <local-home>stockcontrolentity.DbLocalHome</local-home>
+                <local>stockcontrolentity.DbLocal</local>
+                <ejb-link>DbBean</ejb-link>
+            </ejb-local-ref>
+            <ejb-local-ref>
+                <ejb-ref-name>RequitionBean</ejb-ref-name>
+                <ejb-ref-type>Entity</ejb-ref-type>
+                <local-home>stockcontrolentity.RequitionLocalHome</local-home>
+                <local>stockcontrolentity.RequitionLocal</local>
+                <ejb-link>RequitionBean</ejb-link>
+            </ejb-local-ref>
+              <ejb-local-ref>
+                <ejb-ref-name>LimitsBean</ejb-ref-name>
+                <ejb-ref-type>Entity</ejb-ref-type>
+                <local-home>stockcontrolentity.LimitsLocalHome</local-home>
+                <local>stockcontrolentity.LimitsLocal</local>
+                <ejb-link>LimitsBean</ejb-link>
+            </ejb-local-ref>
+            <ejb-local-ref>
+                <ejb-ref-name>SectionsBean</ejb-ref-name>
+                <ejb-ref-type>Entity</ejb-ref-type>
+                <local-home>stockcontrolentity.SectionsLocalHome</local-home>
+                <local>stockcontrolentity.SectionsLocal</local>
+                <ejb-link>SectionsBean</ejb-link>
+            </ejb-local-ref>
+            <ejb-local-ref>
+                <ejb-ref-name>StockhistoryBean</ejb-ref-name>
+                <ejb-ref-type>Entity</ejb-ref-type>
+                <local-home>stockcontrolentity.StockhistoryLocalHome</local-home>
+                <local>stockcontrolentity.StockhistoryLocal</local>
+                <ejb-link>StockhistoryBean</ejb-link>
+            </ejb-local-ref>
+            <ejb-local-ref>
+                <ejb-ref-name>ProductionhistoryBean</ejb-ref-name>
+                <ejb-ref-type>Entity</ejb-ref-type>
+                <local-home>stockcontrolentity.ProductionhistoryLocalHome</local-home>
+                <local>stockcontrolentity.ProductionhistoryLocal</local>
+                <ejb-link>ProductionhistoryBean</ejb-link>
+            </ejb-local-ref>
+            <ejb-local-ref>
+                <ejb-ref-name>CostAnalysisBean</ejb-ref-name>
+                <ejb-ref-type>Entity</ejb-ref-type>
+                <local-home>stockcontrolentity.CostAnalysisLocalHome</local-home>
+                <local>stockcontrolentity.CostAnalysisLocal</local>
+                <ejb-link>CostAnalysisBean</ejb-link></ejb-local-ref>
+                <ejb-local-ref>
+                    <ejb-ref-name>InventoryCostBean</ejb-ref-name>
+                    <ejb-ref-type>Entity</ejb-ref-type>
+                    <local-home>stockcontrolentity.InventoryCostLocalHome</local-home>
+                    <local>stockcontrolentity.InventoryCostLocal</local>
+                    <ejb-link>InventoryCostBean</ejb-link>
+                    </ejb-local-ref>
+            <ejb-local-ref>
+                <ejb-ref-name>InventoryCostSetupBean</ejb-ref-name>
+                <ejb-ref-type>Entity</ejb-ref-type>
+                <local-home>stockcontrolentity.InventoryCostSetupLocalHome</local-home>
+                <local>stockcontrolentity.InventoryCostSetupLocal</local>
+                <ejb-link>InventoryCostSetupBean</ejb-link>
+            </ejb-local-ref>
+            <ejb-local-ref>
+                <ejb-ref-name>WarehouseBean</ejb-ref-name>
+                <ejb-ref-type>Entity</ejb-ref-type>
+                <local-home>stockcontrolentity.WarehouseLocalHome</local-home>
+                <local>stockcontrolentity.WarehouseLocal</local>
+                <ejb-link>WarehouseBean</ejb-link>
+            </ejb-local-ref>
+            <ejb-local-ref>
+                <ejb-ref-name>StockInventoryEditionsBean</ejb-ref-name>
+                <ejb-ref-type>Entity</ejb-ref-type>
+                <local-home>stockcontrolentity.StockInventoryEditionsLocalHome</local-home>
+                <local>stockcontrolentity.StockInventoryEditionsLocal</local>
+                <ejb-link>StockInventoryEditionsBean</ejb-link>
+            </ejb-local-ref>
+            <ejb-local-ref>
+                <ejb-ref-name>StocktransferBean</ejb-ref-name>
+                <ejb-ref-type>Entity</ejb-ref-type>
+                <local-home>stockcontrolentity.StocktransferLocalHome</local-home>
+                <local>stockcontrolentity.StocktransferLocal</local>
+                <ejb-link>StocktransferBean</ejb-link>
+            </ejb-local-ref>
+            <ejb-local-ref>
+                <ejb-ref-name>BranchBean</ejb-ref-name>
+                <ejb-ref-type>Entity</ejb-ref-type>
+                <local-home>stockcontrolentity.BranchLocalHome</local-home>
+                <local>stockcontrolentity.BranchLocal</local>
+                <ejb-link>BranchBean</ejb-link>
+            </ejb-local-ref>
+            <ejb-local-ref>
+                <ejb-ref-name>CategoryBean</ejb-ref-name>
+                <ejb-ref-type>Entity</ejb-ref-type>
+                <local-home>stockcontrolentity.CategoryLocalHome</local-home>
+                <local>stockcontrolentity.CategoryLocal</local>
+                <ejb-link>CategoryBean</ejb-link>
+            </ejb-local-ref>
+            <ejb-local-ref>
+                <ejb-ref-name>ItemsBean</ejb-ref-name>
+                <ejb-ref-type>Entity</ejb-ref-type>
+                <local-home>stockcontrolentity.ItemsLocalHome</local-home>
+                <local>stockcontrolentity.ItemsLocal</local>
+                <ejb-link>ItemsBean</ejb-link>
+            </ejb-local-ref>
+            </session>
+             <session>
+            <display-name>ReportsSB</display-name>
+            <ejb-name>ReportsBean</ejb-name>
+            <local-home>stockcontrolsession.ReportsLocalHome</local-home>
+            <local>stockcontrolsession.ReportsLocal</local>
+            <ejb-class>stockcontrolsession.ReportsBean</ejb-class>
+            <session-type>Stateless</session-type>
+            <transaction-type>Container</transaction-type>
+        </session>
+        <entity>
+            <description>jdbc:mysql://localhost:3306/e-scotrol [root on Default schema]</description>
+            <display-name>UnitEB</display-name>
+            <ejb-name>UnitBean</ejb-name>
+            <local-home>stockcontrolentity.UnitLocalHome</local-home>
+            <local>stockcontrolentity.UnitLocal</local>
+            <ejb-class>stockcontrolentity.UnitBean</ejb-class>
+            <persistence-type>Container</persistence-type>
+            <prim-key-class>java.lang.Integer</prim-key-class>
+            <reentrant>false</reentrant>
+            <abstract-schema-name>Unit</abstract-schema-name>
+              <cmp-field>
+                <description/>
+                <field-name>sno</field-name>
+            </cmp-field>
+             <cmp-field>
+                <field-name>unitName</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>unitType</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>commodidtyType</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>unitcode</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>del</field-name>
+            </cmp-field>
+          
+            <cmp-field>
+                <description/>
+                <field-name>whcode</field-name>
+            </cmp-field>
+          
+            <primkey-field>sno</primkey-field>
+<query>
+                <query-method>
+                    <method-name>findBySno</method-name>
+                    <method-params>
+                        <method-param>java.lang.Integer</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(u) FROM Unit AS u WHERE u.sno = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByUnitcode</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(u) FROM Unit AS u WHERE u.unitcode = ?1</ejb-ql>
+            </query>
+               <query>
+                <query-method>
+                    <method-name>findByUnitName</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(u) FROM Unit AS u WHERE u.unitName = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByUnitType</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(u) FROM Unit AS u WHERE u.unitType = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByCommodidtyType</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(u) FROM Unit AS u WHERE u.commodidtyType = ?1</ejb-ql>
+            </query>
+             <query>
+                <query-method>
+                    <method-name>findByUnit</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                          <method-param>java.lang.String</method-param>
+                    </method-params>
+
+                </query-method>
+                <ejb-ql>SELECT OBJECT(u)
+FROM Unit AS u WHERE u.unitcode LIKE ?1 and u.whcode = ?2</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findAll</method-name>
+                      <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(u)
+FROM Unit AS u WHERE u.whcode = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findBySnoAndWarehouse</method-name>
+                    <method-params>
+                        <method-param>java.lang.Integer</method-param>
+                         <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(u)
+FROM Unit AS u WHERE u.sno = ?1 and u.whcode = ?2</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>ejbSelectByMax</method-name>
+                    <method-params/>
+                </query-method>
+                <ejb-ql>SELECT MAX(u.sno) 
+FROM Unit u</ejb-ql>
+            </query>
+
+            </entity>
+        <entity>
+            <description>jdbc:mysql://localhost:3306/e-scotrol [root on Default schema]</description>
+            <display-name>UserloginEB</display-name>
+            <ejb-name>UserloginBean</ejb-name>
+            <local-home>stockcontrolentity.UserloginLocalHome</local-home>
+            <local>stockcontrolentity.UserloginLocal</local>
+            <ejb-class>stockcontrolentity.UserloginBean</ejb-class>
+            <persistence-type>Container</persistence-type>
+            <prim-key-class>java.lang.String</prim-key-class>
+            <reentrant>false</reentrant>
+            <abstract-schema-name>Userlogin</abstract-schema-name>
+            <cmp-field>
+                <field-name>username</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>password</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>role</field-name>
+            </cmp-field>
+
+            <cmp-field>
+                <description/>
+                <field-name>del</field-name>
+            </cmp-field>
+            <primkey-field>username</primkey-field>
+            <query>
+                <query-method>
+                    <method-name>findByUsername</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(u) FROM Userlogin AS u WHERE u.username = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByPassword</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(u) FROM Userlogin AS u WHERE u.password = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByRole</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(u) FROM Userlogin AS u WHERE u.role = ?1</ejb-ql>
+            </query>
+            </entity>
+        <entity>
+            <description>jdbc:mysql://localhost:3306/e-scotrol [root on Default schema]</description>
+            <display-name>StaffEB</display-name>
+            <ejb-name>StaffBean</ejb-name>
+            <local-home>stockcontrolentity.StaffLocalHome</local-home>
+            <local>stockcontrolentity.StaffLocal</local>
+            <ejb-class>stockcontrolentity.StaffBean</ejb-class>
+            <persistence-type>Container</persistence-type>
+            <prim-key-class>java.lang.String</prim-key-class>
+            <reentrant>false</reentrant>
+            <abstract-schema-name>Staff</abstract-schema-name>
+            <cmp-field>
+                <field-name>username</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>firstName</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>lastName</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>gender</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>position</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>nationality</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>stateOfOrigin</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>lga</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>homeAddress</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>phoneNumber</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>dateOfAppointment</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>passport</field-name>
+            </cmp-field>
+
+            <cmp-field>
+                <description/>
+                <field-name>del</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>whcode</field-name>
+            </cmp-field>
+            <primkey-field>username</primkey-field>
+            <query>
+                <query-method>
+                    <method-name>findByUsername</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Staff AS s WHERE s.username = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByFirstName</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Staff AS s WHERE s.firstName = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByLastName</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Staff AS s WHERE s.lastName = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByGender</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Staff AS s WHERE s.gender = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByPosition</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Staff AS s WHERE s.position = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByNationality</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Staff AS s WHERE s.nationality = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByStateOfOrigin</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Staff AS s WHERE s.stateOfOrigin = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByLga</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Staff AS s WHERE s.lga = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByHomeAddress</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Staff AS s WHERE s.homeAddress = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByPhoneNumber</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Staff AS s WHERE s.phoneNumber = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByDateOfAppointment</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Staff AS s WHERE s.dateOfAppointment = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findAll</method-name>
+                    <method-params/>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s)
+FROM Staff AS s</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByName1</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s)
+FROM Staff AS s WHERE s.firstName LIKE ?1</ejb-ql>
+            </query>
+            </entity>
+        <entity>
+            <description>jdbc:mysql://localhost:3306/e-scotrol [root on Default schema]</description>
+            <display-name>NationalityEB</display-name>
+            <ejb-name>NationalityBean</ejb-name>
+            <local-home>stockcontrolentity.NationalityLocalHome</local-home>
+            <local>stockcontrolentity.NationalityLocal</local>
+            <ejb-class>stockcontrolentity.NationalityBean</ejb-class>
+            <persistence-type>Container</persistence-type>
+            <prim-key-class>java.lang.String</prim-key-class>
+            <reentrant>false</reentrant>
+            <abstract-schema-name>Nationality</abstract-schema-name>
+            <cmp-field>
+                <field-name>code</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>country</field-name>
+            </cmp-field>
+            <primkey-field>code</primkey-field>
+            <query>
+                <query-method>
+                    <method-name>findByCode</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(n) FROM Nationality AS n WHERE n.code = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByCountry</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(n) FROM Nationality AS n WHERE n.country = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findAll</method-name>
+                    <method-params/>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(n)
+FROM Nationality AS n</ejb-ql>
+            </query>
+            </entity>
+        <entity>
+            <description>jdbc:mysql://localhost:3306/e-scotrol [root on Default schema]</description>
+            <display-name>StockEB</display-name>
+            <ejb-name>StockBean</ejb-name>
+            <local-home>stockcontrolentity.StockLocalHome</local-home>
+            <local>stockcontrolentity.StockLocal</local>
+            <ejb-class>stockcontrolentity.StockBean</ejb-class>
+            <persistence-type>Container</persistence-type>
+            <prim-key-class>java.lang.String</prim-key-class>
+            <reentrant>false</reentrant>
+            <abstract-schema-name>Stock</abstract-schema-name>
+
+             <cmp-field>
+                <field-name>commodityId</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>quantityIn</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>receivedDate</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>quantityLeft</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>receivedBy</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>unitprice</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>commodityName</field-name>
+            </cmp-field>
+
+            <cmp-field>
+                <description/>
+                <field-name>unitcode</field-name>
+            </cmp-field>
+
+            <cmp-field>
+                <description/>
+                <field-name>del</field-name>
+            </cmp-field>
+             <cmp-field>
+                <description/>
+                <field-name>compartments</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>whcode</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>MakeOrBuy</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>barcode</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>DiscountCategory</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>category</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>batchcode</field-name>
+            </cmp-field>
+           <primkey-field>commodityId</primkey-field>
+               <query>
+                <query-method>
+                    <method-name>findByCommodityId</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Stock AS s WHERE s.commodityId = ?1</ejb-ql>
+            </query>
+              <query>
+                <query-method>
+                    <method-name>findByQuantityIn</method-name>
+                    <method-params>
+                        <method-param>java.lang.Integer</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Stock AS s WHERE s.quantityIn = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByReceivedDate</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Stock AS s WHERE s.receivedDate = ?1</ejb-ql>
+            </query>
+             <query>
+                <query-method>
+                    <method-name>findByUnitprice</method-name>
+                    <method-params>
+                        <method-param>java.lang.Float</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Stock AS s WHERE s.unitprice = ?1</ejb-ql>
+            </query>
+
+            <query>
+                <query-method>
+                    <method-name>findByQuantityLeft</method-name>
+                    <method-params>
+                        <method-param>java.lang.Integer</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Stock AS s WHERE s.quantityLeft = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByReceivedBy</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Stock AS s WHERE s.receivedBy = ?1</ejb-ql>
+            </query>
+              <query>
+                <query-method>
+                    <method-name>findByCommodityName</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s)
+FROM Stock AS s WHERE s.commodityName = ?1</ejb-ql>
+            </query>
+             <query>
+                <query-method>
+                    <method-name>findByUnitcode</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s)
+FROM Stock AS s WHERE s.unitcode = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findBycommodityName</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                         <method-param>java.lang.String</method-param>
+                         <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s)
+FROM Stock AS s WHERE s.commodityId LIKE ?1 and s.whcode = ?2 and s.del = ?3 </ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findAll</method-name>
+                   <method-params>
+                        <method-param>java.lang.String</method-param>
+                         <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s)
+FROM Stock AS s WHERE s.del = ?1 and s.whcode = ?2</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findBycommodityIdAndWarehouse</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                          <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s)
+FROM Stock AS s WHERE s.commodityId  = ?1 and s.whcode = ?2</ejb-ql>
+            </query>
+
+             <query>
+                <query-method>
+                    <method-name>findBycommodityId2</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s)
+FROM Stock AS s WHERE s.commodityId LIKE ?1</ejb-ql>
+            </query>
+
+            <query>
+                <query-method><method-name>findByCommodityIdAndWarehouse</method-name>
+                <method-params><method-param>java.lang.String</method-param>
+                <method-param>java.lang.String</method-param></method-params>
+                </query-method><ejb-ql>SELECT OBJECT(s)
+FROM Stock AS s WHERE s.commodityId = ?1 and s.whcode = ?2</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByWhcodeAndCompartments</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s)
+FROM Stock AS s WHERE s.whcode = ?1 and s.compartments = ?2</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByCategory</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s)
+FROM Stock AS s WHERE s.category = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findBycategoryandwhcode</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s)
+FROM Stock AS s WHERE s.category = ?1 and s.whcode = ?2</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findBycommodityIdAndWhcodeAndDel</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                        <method-param>java.lang.String</method-param>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s)
+FROM Stock AS s WHERE s.commodityId LIKE ?1 and  s.whcode = ?2 and s.del = ?3</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByCategoryAndWhcodeAndMakeorBuyAndDel</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                        <method-param>java.lang.String</method-param>
+                        <method-param>java.lang.String</method-param>
+                         <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s)
+FROM Stock AS s WHERE s.category = ?1 and s.whcode = ?2 and s.MakeOrBuy = ?3 and s.del = ?4</ejb-ql>
+            </query>
+
+            <query>
+                <query-method>
+                    <method-name>findByDel</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) 
+FROM Stock As s WHERE s.del = ?1</ejb-ql>
+            </query>
+            </entity>
+
+        <entity>
+            <description>jdbc:mysql://localhost:3306/e-scotrol [root on Default schema]</description>
+            <display-name>RolesEB</display-name>
+            <ejb-name>RolesBean</ejb-name>
+            <local-home>stockcontrolentity.RolesLocalHome</local-home>
+            <local>stockcontrolentity.RolesLocal</local>
+            <ejb-class>stockcontrolentity.RolesBean</ejb-class>
+            <persistence-type>Container</persistence-type>
+            <prim-key-class>java.lang.String</prim-key-class>
+            <reentrant>false</reentrant>
+            <abstract-schema-name>Roles</abstract-schema-name>
+            <cmp-field>
+                <field-name>roleName</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>defaultName</field-name>
+            </cmp-field>
+
+            <cmp-field>
+                <description/>
+                <field-name>del</field-name>
+            </cmp-field>
+            <primkey-field>roleName</primkey-field>
+            <query>
+                <query-method>
+                    <method-name>findByRoleName</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(r) FROM Roles AS r WHERE r.roleName = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByDefaultName</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(r) FROM Roles AS r WHERE r.defaultName = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findAll</method-name>
+                     <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(r)
+FROM Roles AS r WHERE r.del = ?1</ejb-ql>
+            </query>
+            </entity>
+        <entity>
+            <description>jdbc:mysql://localhost:3306/e-scotrol [root on Default schema]</description>
+            <display-name>StateoforiginEB</display-name>
+            <ejb-name>StateoforiginBean</ejb-name>
+            <local-home>stockcontrolentity.StateoforiginLocalHome</local-home>
+            <local>stockcontrolentity.StateoforiginLocal</local>
+            <ejb-class>stockcontrolentity.StateoforiginBean</ejb-class>
+            <persistence-type>Container</persistence-type>
+            <prim-key-class>java.lang.String</prim-key-class>
+            <reentrant>false</reentrant>
+            <abstract-schema-name>Stateoforigin</abstract-schema-name>
+            <cmp-field>
+                <field-name>code</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>state</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>country</field-name>
+            </cmp-field>
+            <primkey-field>code</primkey-field>
+            <query>
+                <query-method>
+                    <method-name>findByCode</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Stateoforigin AS s WHERE s.code = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByState</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Stateoforigin AS s WHERE s.state = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByCountry</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Stateoforigin AS s WHERE s.country = ?1</ejb-ql>
+            </query>
+            </entity>
+        <entity>
+            <description>jdbc:mysql://localhost:3306/e-scotrol [root on Default schema]</description>
+            <display-name>SupplyEB</display-name>
+            <ejb-name>SupplyBean</ejb-name>
+            <local-home>stockcontrolentity.SupplyLocalHome</local-home>
+            <local>stockcontrolentity.SupplyLocal</local>
+            <ejb-class>stockcontrolentity.SupplyBean</ejb-class>
+            <persistence-type>Container</persistence-type>
+            <prim-key-class>java.lang.Integer</prim-key-class>
+            <reentrant>false</reentrant>
+            <abstract-schema-name>Supply</abstract-schema-name>
+            <cmp-field>
+                <field-name>sno</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>commodityId</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>issuedBy</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>distributorId</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>dateSupplied</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>quantitySupplied</field-name>
+            </cmp-field>
+          <cmp-field>
+                <description/>
+                <field-name>cogs</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>whcode</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>qtyleft</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>comodityname</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>location</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>phonenumber</field-name>
+            </cmp-field>
+            <primkey-field>sno</primkey-field>
+            <query>
+                <query-method>
+                    <method-name>findBySno</method-name>
+                    <method-params>
+                        <method-param>java.lang.Integer</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Supply AS s WHERE s.sno = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByCommodityId</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Supply AS s WHERE s.commodityId = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByIssuedBy</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Supply AS s WHERE s.issuedBy = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByDistributorId</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Supply AS s WHERE s.distributorId = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByDateSupplied</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Supply AS s WHERE s.dateSupplied = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>ejbSelectByMax</method-name>
+                    <method-params/>
+                </query-method>
+                <ejb-ql>SELECT MAX(s.sno)
+FROM Supply AS s</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findAll</method-name>
+                      <method-params/>
+                   </query-method>
+                <ejb-ql>SELECT OBJECT(s)
+FROM Supply AS s</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByCategory</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s)
+FROM Supply AS s WHERE s.commodityId LIKE ?1 and s.qtyleft = ?2</ejb-ql>
+            </query>
+              <query>
+                <query-method>
+                    <method-name>findByQuantitySupplied</method-name>
+                    <method-params>
+                        <method-param>java.lang.Integer</method-param>
+                        </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s)
+FROM Supply AS s WHERE s.quantitySupplied = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByWhcode</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) 
+FROM Supply As s WHERE s.whcode = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByComodityname</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s)
+FROM Supply As s WHERE s.comodityname LIKE ?1</ejb-ql>
+            </query>
+            </entity>
+       <entity>
+            <description>jdbc:mysql://localhost:3306/e-scotrol [root on Default schema]</description>
+            <display-name>LgaEB</display-name>
+            <ejb-name>LgaBean</ejb-name>
+            <local-home>stockcontrolentity.LgaLocalHome</local-home>
+            <local>stockcontrolentity.LgaLocal</local>
+            <ejb-class>stockcontrolentity.LgaBean</ejb-class>
+            <persistence-type>Container</persistence-type>
+            <prim-key-class>java.lang.String</prim-key-class>
+            <reentrant>false</reentrant>
+            <abstract-schema-name>Lga</abstract-schema-name>
+            <cmp-field>
+                <field-name>code</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>lga</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>state</field-name>
+            </cmp-field>
+            <primkey-field>code</primkey-field>
+            <query>
+                <query-method>
+                    <method-name>findByCode</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(l) FROM Lga AS l WHERE l.code = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByLga</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(l) FROM Lga AS l WHERE l.lga = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByState</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(l) FROM Lga AS l WHERE l.state = ?1</ejb-ql>
+            </query>
+            </entity>
+        <entity>
+            <description>jdbc:mysql://localhost:3306/e-scotrol [root on Default schema]</description>
+            <display-name>ProductionEB</display-name>
+            <ejb-name>ProductionBean</ejb-name>
+            <local-home>stockcontrolentity.ProductionLocalHome</local-home>
+            <local>stockcontrolentity.ProductionLocal</local>
+            <ejb-class>stockcontrolentity.ProductionBean</ejb-class>
+            <persistence-type>Container</persistence-type>
+            <prim-key-class>java.lang.String</prim-key-class>
+            <reentrant>false</reentrant>
+            <abstract-schema-name>Production</abstract-schema-name>
+             <cmp-field>
+                <field-name>commodityType</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>quantityProduced</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>matrialsUsed</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>dateOfProduced</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>manager</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>del</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>commodityid</field-name>
+            </cmp-field>
+            <primkey-field>commodityid</primkey-field>
+            <query>
+                <query-method>
+                    <method-name>findByCommodityId</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(p)
+FROM Production AS p WHERE p.commodityid = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByProductionId</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(p) FROM Production AS p WHERE p.commodityid = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByCommodityType</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(p) FROM Production AS p WHERE p.commodityType = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByQuantityProduced</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(p) FROM Production AS p WHERE p.quantityProduced = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByMatrialsUsed</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(p) FROM Production AS p WHERE p.matrialsUsed = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByDateOfProduced</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(p) FROM Production AS p WHERE p.dateOfProduced = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByManager</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(p) FROM Production AS p WHERE p.manager = ?1</ejb-ql>
+            </query>
+             <query>
+                <query-method>
+                    <method-name>findAll</method-name>
+                     <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(p)
+FROM Production AS p WHERE p.del = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findBycommoditytype</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(p)
+FROM Production AS p WHERE p.commodityType LIKE ?1</ejb-ql>
+            </query>
+            
+
+            </entity>
+        <entity>
+            <description>jdbc:mysql://localhost:3306/e-scotrol [root on Default schema]</description>
+            <display-name>MaterialsEB</display-name>
+            <ejb-name>MaterialsBean</ejb-name>
+            <local-home>stockcontrolentity.MaterialsLocalHome</local-home>
+            <local>stockcontrolentity.MaterialsLocal</local>
+            <ejb-class>stockcontrolentity.MaterialsBean</ejb-class>
+            <persistence-type>Container</persistence-type>
+            <prim-key-class>java.lang.Integer</prim-key-class>
+            <reentrant>false</reentrant>
+            <abstract-schema-name>Materials</abstract-schema-name>
+            <cmp-field>
+                <field-name>id</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>materialName</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>materialType</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>quantityUsed</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>dateUsed</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>amount</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>manager</field-name>
+            </cmp-field>
+
+            <cmp-field>
+                <description/>
+                <field-name>del</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>itemCode</field-name>
+            </cmp-field>
+            <primkey-field>id</primkey-field>
+            <query>
+                <query-method>
+                    <method-name>findById</method-name>
+                    <method-params>
+                        <method-param>java.lang.Integer</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(m) FROM Materials AS m WHERE m.id = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByMaterialName</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(m) FROM Materials AS m WHERE m.materialName = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByMaterialType</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(m) FROM Materials AS m WHERE m.materialType = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByQuantityUsed</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(m) FROM Materials AS m WHERE m.quantityUsed = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByDateUsed</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(m) FROM Materials AS m WHERE m.dateUsed = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByAmount</method-name>
+                    <method-params>
+                        <method-param>java.lang.Float</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(m) FROM Materials AS m WHERE m.amount = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByManager</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(m) FROM Materials AS m WHERE m.manager = ?1</ejb-ql>
+            </query>
+
+            <query>
+                <query-method>
+                    <method-name>findAll</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(m)
+FROM Materials AS m WHERE m.del = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findBy</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                   <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(m)
+FROM Materials AS m WHERE m.materialName LIKE ?1 and m.del = ?2</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByItemCode</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                         <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(m)
+FROM Materials AS m WHERE m.itemCode = ?1 and m.del = ?2</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findById</method-name>
+                    <method-params>
+                        <method-param>java.lang.Integer</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(m) FROM Materials AS m WHERE m.id = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByMaterialName</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(m) FROM Materials AS m WHERE m.materialName = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByMaterialType</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(m) FROM Materials AS m WHERE m.materialType = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByQuantityUsed</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(m) FROM Materials AS m WHERE m.quantityUsed = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByDateUsed</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(m) FROM Materials AS m WHERE m.dateUsed = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByAmount</method-name>
+                    <method-params>
+                        <method-param>java.lang.Float</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(m) FROM Materials AS m WHERE m.amount = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByManager</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(m) FROM Materials AS m WHERE m.manager = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>ejbSelectByMAX</method-name>
+                    <method-params/>
+                </query-method>
+                <ejb-ql>SELECT MAX(m.id)
+FROM Materials m</ejb-ql>
+            </query>
+            </entity>
+        <entity>
+            <description>jdbc:mysql://localhost:3306/e-scotrol [root on Default schema]</description>
+            <display-name>RequitionEB</display-name>
+            <ejb-name>RequitionBean</ejb-name>
+            <local-home>stockcontrolentity.RequitionLocalHome</local-home>
+            <local>stockcontrolentity.RequitionLocal</local>
+            <ejb-class>stockcontrolentity.RequitionBean</ejb-class>
+            <persistence-type>Container</persistence-type>
+            <prim-key-class>java.lang.Integer</prim-key-class>
+            <reentrant>false</reentrant>
+            <abstract-schema-name>Requition</abstract-schema-name>
+            <cmp-field>
+                <field-name>sno</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>commodityId</field-name>
+            </cmp-field>
+             <cmp-field>
+                <field-name>dateoFRequest</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>manager</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>requisitionCode</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>comment</field-name>
+            </cmp-field>
+
+            <cmp-field>
+                <description/>
+                <field-name>del</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>quantity</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>status</field-name>
+            </cmp-field>
+           
+          
+            <primkey-field>sno</primkey-field>
+            <query>
+                <query-method>
+                    <method-name>findBySno</method-name>
+                    <method-params>
+                        <method-param>java.lang.Integer</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(r) FROM Requition AS r WHERE r.sno = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByCommodityId</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(r) FROM Requition AS r WHERE r.commodityId = ?1</ejb-ql>
+            </query>
+             <query>
+                <query-method>
+                    <method-name>findByDateoFRequest</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(r) FROM Requition AS r WHERE r.dateoFRequest = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByManager</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(r) FROM Requition AS r WHERE r.manager = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>ejbSelectByMax</method-name>
+                    <method-params/>
+                </query-method>
+                <ejb-ql>SELECT MAX(r.sno)
+FROM Requition AS r</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findAll</method-name>
+                    <method-params/>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(r)
+FROM Requition AS r</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByRequisitionCode</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(r)
+FROM Requition AS r WHERE r.requisitionCode LIKE ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByStatus</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(r)
+FROM Requition AS r WHERE r.status = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findBySno</method-name>
+                    <method-params>
+                        <method-param>java.lang.Integer</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(r) FROM Requition AS r WHERE r.sno = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByCommodityId</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(r) FROM Requition AS r WHERE r.commodityId = ?1</ejb-ql>
+            </query>
+           
+            <query>
+                <query-method>
+                    <method-name>findByManager</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(r) FROM Requition AS r WHERE r.manager = ?1</ejb-ql>
+            </query>
+            </entity>
+        <entity>
+            <description>jdbc:mysql://localhost:3306/e-scotrol [root on Default schema]</description>
+            <display-name>DbEB</display-name>
+            <ejb-name>DbBean</ejb-name>
+            <local-home>stockcontrolentity.DbLocalHome</local-home>
+            <local>stockcontrolentity.DbLocal</local>
+            <ejb-class>stockcontrolentity.DbBean</ejb-class>
+            <persistence-type>Container</persistence-type>
+            <prim-key-class>java.lang.Integer</prim-key-class>
+            <reentrant>false</reentrant>
+            <abstract-schema-name>Db</abstract-schema-name>
+            <cmp-field>
+                <field-name>sno</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>host</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>username</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>password</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>dbname</field-name>
+            </cmp-field>
+
+            <cmp-field>
+                <description/>
+                <field-name>del</field-name>
+            </cmp-field>
+            <primkey-field>sno</primkey-field>
+            <query>
+                <query-method>
+                    <method-name>findBySno</method-name>
+                    <method-params>
+                        <method-param>java.lang.Integer</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(d) FROM Db AS d WHERE d.sno = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByHost</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(d) FROM Db AS d WHERE d.host = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByUsername</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(d) FROM Db AS d WHERE d.username = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByPassword</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(d) FROM Db AS d WHERE d.password = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByDbname</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(d) FROM Db AS d WHERE d.dbname = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>ejbSelectByMax</method-name>
+                    <method-params/>
+                </query-method>
+                <ejb-ql>SELECT MAX(d.sno)
+FROM Db AS d</ejb-ql>
+            </query>
+              </entity>
+            <entity>
+            <description>jdbc:mysql://localhost:3306/e-scotrol [root on Default schema]</description>
+            <display-name>LimitsEB</display-name>
+            <ejb-name>LimitsBean</ejb-name>
+            <local-home>stockcontrolentity.LimitsLocalHome</local-home>
+            <local>stockcontrolentity.LimitsLocal</local>
+            <ejb-class>stockcontrolentity.LimitsBean</ejb-class>
+            <persistence-type>Container</persistence-type>
+            <prim-key-class>java.lang.String</prim-key-class>
+            <reentrant>false</reentrant>
+            <abstract-schema-name>Limits</abstract-schema-name>
+            <cmp-field>
+                <field-name>code</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>lower</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>upper</field-name>
+            </cmp-field>
+             <cmp-field>
+                <description/>
+                <field-name>del</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>whcode</field-name>
+            </cmp-field>
+            <primkey-field>code</primkey-field>
+            <query>
+                <query-method>
+                    <method-name>findByCode</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(l) FROM Limits AS l WHERE l.code = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByLower1</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(l) FROM Limits AS l WHERE l.lower = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByUpper1</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(l) FROM Limits AS l WHERE l.upper = ?1</ejb-ql>
+            </query>
+               <query>
+                <query-method>
+                    <method-name>findAll</method-name>
+                   <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(l)
+FROM Limits AS l WHERE l.whcode = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByCommodityIdAndWarehouse</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                         <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(l)
+FROM Limits AS l WHERE l.code = ?1 and l.whcode = ?2</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByCode</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(l) FROM Limits AS l WHERE l.code = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByLower1</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(l) FROM Limits AS l WHERE l.lower = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByUpper1</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(l) FROM Limits AS l WHERE l.upper = ?1</ejb-ql>
+            </query>
+            </entity>
+
+        <entity>
+            <description>jdbc:mysql://localhost:3306/control [root on Default schema]</description>
+            <display-name>SectionsEB</display-name>
+            <ejb-name>SectionsBean</ejb-name>
+            <local-home>stockcontrolentity.SectionsLocalHome</local-home>
+            <local>stockcontrolentity.SectionsLocal</local>
+            <ejb-class>stockcontrolentity.SectionsBean</ejb-class>
+            <persistence-type>Container</persistence-type>
+            <prim-key-class>java.lang.Integer</prim-key-class>
+            <reentrant>false</reentrant>
+            <abstract-schema-name>Sections</abstract-schema-name>
+              <cmp-field>
+                <description/>
+                <field-name>sno</field-name>
+            </cmp-field>
+              <cmp-field>
+                <field-name>name</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>capacity</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>description</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>status</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>del</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>track</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>whcode</field-name>
+            </cmp-field>
+
+            <primkey-field>sno</primkey-field>
+            <query>
+                <query-method>
+                    <method-name>findBySno</method-name>
+                    <method-params>
+                        <method-param>java.lang.Integer</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Sections AS s WHERE s.sno = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByName</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Sections AS s WHERE s.name = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByCapacity</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Sections AS s WHERE s.capacity = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByDescription</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Sections AS s WHERE s.description = ?1</ejb-ql>
+            </query>
+
+            <query>
+                <query-method>
+                    <method-name>findByTrack</method-name>
+                    <method-params>
+                        <method-param>java.lang.Integer</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Sections AS s WHERE s.track = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByStatus</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Sections AS s WHERE s.status = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByDel</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Sections AS s WHERE s.del = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByWhcode</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Sections AS s WHERE s.whcode = ?1</ejb-ql>
+            </query>
+               <query>
+                <query-method>
+                    <method-name>findAll</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s)
+FROM Sections AS s WHERE s.del = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByNameAndWhcode</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s)
+FROM Sections AS s WHERE s.name = ?1 and s.whcode = ?2</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByDelAndWhcode</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s)
+FROM Sections AS s WHERE s.del = ?1 and s.whcode = ?2</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>ejbSelectByMax</method-name>
+                    <method-params/>
+                </query-method>
+                <ejb-ql>SELECT MAX(s.sno)
+FROM Sections s</ejb-ql>
+            </query>
+          </entity>
+        
+             <entity>
+            <description>jdbc:mysql://localhost:3306/control [root on Default schema]</description>
+            <display-name>StockhistoryEB</display-name>
+            <ejb-name>StockhistoryBean</ejb-name>
+            <local-home>stockcontrolentity.StockhistoryLocalHome</local-home>
+            <local>stockcontrolentity.StockhistoryLocal</local>
+            <ejb-class>stockcontrolentity.StockhistoryBean</ejb-class>
+            <persistence-type>Container</persistence-type>
+            <prim-key-class>java.lang.Integer</prim-key-class>
+            <reentrant>false</reentrant>
+            <abstract-schema-name>Stockhistory</abstract-schema-name>
+            <cmp-field>
+                <field-name>sno</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>commodityId</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>quantityIn</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>receivedDate</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>quantityLeft</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>receivedBy</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>unitprice</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>commodityName</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>unitcode</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>del</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>compartments</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>status</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>whcode</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>makeorbuy</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>category</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>batchcode</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>code</field-name>
+            </cmp-field>
+            <primkey-field>sno</primkey-field>
+            <query>
+                <query-method>
+                    <method-name>findBySno</method-name>
+                    <method-params>
+                        <method-param>java.lang.Integer</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Stockhistory AS s WHERE s.sno = ?1</ejb-ql>
+            </query>
+             <query>
+                <query-method>
+                    <method-name>findByCode</method-name>
+                    <method-params>
+                        <method-param>java.lang.Integer</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Stockhistory AS s WHERE s.code = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByCommodityId</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Stockhistory AS s WHERE s.commodityId = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByQuantityIn</method-name>
+                    <method-params>
+                        <method-param>java.lang.Integer</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Stockhistory AS s WHERE s.quantityIn = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByReceivedDate</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Stockhistory AS s WHERE s.receivedDate = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByQuantityLeft</method-name>
+                    <method-params>
+                        <method-param>java.lang.Integer</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Stockhistory AS s WHERE s.quantityLeft = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByReceivedBy</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Stockhistory AS s WHERE s.receivedBy = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByUnitprice</method-name>
+                    <method-params>
+                        <method-param>java.lang.Float</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Stockhistory AS s WHERE s.unitprice = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByCommodityName</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Stockhistory AS s WHERE s.commodityName = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByUnitcode</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Stockhistory AS s WHERE s.unitcode = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByDel</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Stockhistory AS s WHERE s.del = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>ejbSelectByMax</method-name>
+                    <method-params/>
+                </query-method>
+                <ejb-ql>SELECT MAX(s.sno)
+FROM Stockhistory s</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByStatus</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s)
+FROM Stockhistory AS s WHERE s.status = ?1</ejb-ql>
+            </query>
+                <query>
+                <query-method>
+                    <method-name>findByCompartments</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s)
+FROM Stockhistory AS s WHERE s.compartments = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByWhcode</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s)
+FROM Stockhistory AS s WHERE s.whcode = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByMakeorbuy</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s)
+FROM Stockhistory AS s WHERE s.makeorbuy = ?1</ejb-ql>
+            </query>
+             <query>
+                <query-method>
+                    <method-name>findByCategory</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s)
+FROM Stockhistory AS s WHERE s.category = ?1</ejb-ql>
+            </query>
+
+            <query>
+                <query-method>
+                    <method-name>findByBatchcode</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s)
+FROM Stockhistory AS s WHERE s.batchcode = ?1</ejb-ql>
+            </query>
+
+
+            </entity>
+        <entity>
+            <description>jdbc:mysql://localhost:3306/control [root on Default schema]</description>
+            <display-name>ProductionhistoryEB</display-name>
+            <ejb-name>ProductionhistoryBean</ejb-name>
+            <local-home>stockcontrolentity.ProductionhistoryLocalHome</local-home>
+            <local>stockcontrolentity.ProductionhistoryLocal</local>
+            <ejb-class>stockcontrolentity.ProductionhistoryBean</ejb-class>
+            <persistence-type>Container</persistence-type>
+            <prim-key-class>java.lang.Integer</prim-key-class>
+            <reentrant>false</reentrant>
+            <abstract-schema-name>Productionhistory</abstract-schema-name>
+            <cmp-field>
+                <field-name>productionId</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>commodityType</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>quantityProduced</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>matrialsUsed</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>dateOfProduced</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>manager</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>del</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>commodityid</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>compartments</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>status</field-name>
+            </cmp-field>
+            <primkey-field>productionId</primkey-field>
+            <query>
+                <query-method>
+                    <method-name>findByProductionId</method-name>
+                    <method-params>
+                        <method-param>java.lang.Integer</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(p) FROM Productionhistory AS p WHERE p.productionId = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByCommodityType</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(p) FROM Productionhistory AS p WHERE p.commodityType = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByQuantityProduced</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(p) FROM Productionhistory AS p WHERE p.quantityProduced = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByMatrialsUsed</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(p) FROM Productionhistory AS p WHERE p.matrialsUsed = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByDateOfProduced</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(p) FROM Productionhistory AS p WHERE p.dateOfProduced = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByManager</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(p) FROM Productionhistory AS p WHERE p.manager = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByDel</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(p) FROM Productionhistory AS p WHERE p.del = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByCommodityid</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(p) FROM Productionhistory AS p WHERE p.commodityid = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByStatus</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(p) FROM Productionhistory AS p WHERE p.status = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByCompartments</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(p) FROM Productionhistory AS p WHERE p.compartments = ?1</ejb-ql>
+            </query>
+        <query>
+                <query-method>
+                    <method-name>ejbSelectByMax</method-name>
+                    <method-params/>
+                </query-method>
+                <ejb-ql>SELECT MAX(p.productionId)
+FROM Productionhistory p</ejb-ql>
+            </query>
+
+             </entity>
+        <entity>
+            <description>jdbc:mysql://localhost:3306/control [root on Default schema]</description>
+            <display-name>CostAnalysisEB</display-name>
+            <ejb-name>CostAnalysisBean</ejb-name>
+            <local-home>stockcontrolentity.CostAnalysisLocalHome</local-home>
+            <local>stockcontrolentity.CostAnalysisLocal</local>
+            <ejb-class>stockcontrolentity.CostAnalysisBean</ejb-class>
+            <persistence-type>Container</persistence-type>
+            <prim-key-class>java.lang.Integer</prim-key-class>
+            <reentrant>false</reentrant>
+            <abstract-schema-name>CostAnalysis</abstract-schema-name>
+            <cmp-field>
+                <field-name>sno</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>materials</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>amount</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>itemCode</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>dateAdded</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>del</field-name>
+            </cmp-field>
+          <primkey-field>sno</primkey-field>
+            <query>
+                <query-method>
+                    <method-name>findBySno</method-name>
+                    <method-params>
+                        <method-param>java.lang.Integer</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM CostAnalysis AS c WHERE c.sno = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByMaterials</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM CostAnalysis AS c WHERE c.materials = ?1</ejb-ql>
+            </query>
+             <query>
+                <query-method>
+                    <method-name>findByAmount</method-name>
+                    <method-params>
+                        <method-param>java.lang.Float</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM CostAnalysis AS c WHERE c.amount = ?1</ejb-ql>
+            </query>
+          <query>
+                <query-method>
+                    <method-name>findByItemCode</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM CostAnalysis AS c WHERE c.itemCode = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByDateAdded</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM CostAnalysis AS c WHERE c.dateAdded = ?1</ejb-ql>
+            </query>
+             <query>
+                <query-method>
+                    <method-name>findByDel</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM CostAnalysis AS c WHERE c.del = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>ejbSelectByMax</method-name>
+                    <method-params/>
+                </query-method>
+                <ejb-ql>SELECT MAX(c.sno)
+FROM CostAnalysis c</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findAll</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c)
+FROM CostAnalysis AS c WHERE c.del = ?1</ejb-ql>
+            </query>
+           </entity>
+        <entity>
+            <description>jdbc:mysql://localhost:3306/control [root on Default schema]</description>
+            <display-name>InventoryCostEB</display-name>
+            <ejb-name>InventoryCostBean</ejb-name>
+            <local-home>stockcontrolentity.InventoryCostLocalHome</local-home>
+            <local>stockcontrolentity.InventoryCostLocal</local>
+            <ejb-class>stockcontrolentity.InventoryCostBean</ejb-class>
+            <persistence-type>Container</persistence-type>
+            <prim-key-class>java.lang.String</prim-key-class>
+            <reentrant>false</reentrant>
+            <abstract-schema-name>InventoryCost</abstract-schema-name>
+               <cmp-field>
+                <field-name>itemCode</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>materialCost</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>labourCost</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>overheadCost</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>del</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>actualCost</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>dateCreated</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>expenses</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>purchesCost</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>exchangeRate</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>freight</field-name>
+            </cmp-field>
+
+            <primkey-field>itemCode</primkey-field>
+
+              <query>
+                <query-method>
+                    <method-name>findAll</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(i)
+FROM InventoryCost AS i WHERE i.del = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByItemCode</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(i)
+FROM InventoryCost As i WHERE i.itemCode = ?1</ejb-ql>
+            </query>
+             <query>
+                <query-method>
+                    <method-name>findByMaterialCost</method-name>
+                    <method-params>
+                        <method-param>java.lang.Float</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(i)
+FROM InventoryCost As i WHERE i.materialCost = ?1</ejb-ql>
+            </query>
+
+            <query>
+                <query-method>
+                    <method-name>findByLabourCost</method-name>
+                    <method-params>
+                        <method-param>java.lang.Float</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(i)
+FROM InventoryCost As i WHERE i.labourCost = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByOverheadCost</method-name>
+                    <method-params>
+                        <method-param>java.lang.Float</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(i)
+FROM InventoryCost As i WHERE i.overheadCost = ?1</ejb-ql>
+            </query>
+                 <query>
+                <query-method>
+                    <method-name>findByDel</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(i)
+FROM InventoryCost As i WHERE i.del = ?1</ejb-ql>
+            </query>
+ <query>
+                <query-method>
+                    <method-name>findByActualCost</method-name>
+                    <method-params>
+                        <method-param>java.lang.Float</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(i)
+FROM InventoryCost As i WHERE i.actualCost = ?1</ejb-ql>
+            </query>
+
+            <query>
+                <query-method>
+                    <method-name>findByDateCreated</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(i)
+FROM InventoryCost As i WHERE i.dateCreated = ?1</ejb-ql>
+            </query>
+                <query>
+                <query-method>
+                    <method-name>findByExpenses</method-name>
+                    <method-params>
+                        <method-param>java.lang.Float</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(i)
+FROM InventoryCost As i WHERE i.expenses = ?1</ejb-ql>
+            </query>
+             <query>
+                <query-method>
+                    <method-name>findByPurchesCost</method-name>
+                    <method-params>
+                        <method-param>java.lang.Float</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(i)
+FROM InventoryCost As i WHERE i.purchesCost = ?1</ejb-ql>
+            </query>
+             <query>
+                <query-method>
+                    <method-name>findByExchangeRate</method-name>
+                    <method-params>
+                        <method-param>java.lang.Float</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(i)
+FROM InventoryCost As i WHERE i.exchangeRate = ?1</ejb-ql>
+            </query>
+             <query>
+                <query-method>
+                    <method-name>findByFreight</method-name>
+                    <method-params>
+                        <method-param>java.lang.Float</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(i)
+FROM InventoryCost As i WHERE i.freight = ?1</ejb-ql>
+            </query>
+            </entity>
+        <entity>
+            <description>jdbc:mysql://localhost:3306/control [root on Default schema]</description>
+            <display-name>InventoryCostSetupEB</display-name>
+            <ejb-name>InventoryCostSetupBean</ejb-name>
+            <local-home>stockcontrolentity.InventoryCostSetupLocalHome</local-home>
+            <local>stockcontrolentity.InventoryCostSetupLocal</local>
+            <ejb-class>stockcontrolentity.InventoryCostSetupBean</ejb-class>
+            <persistence-type>Container</persistence-type>
+            <prim-key-class>java.lang.String</prim-key-class>
+            <reentrant>false</reentrant>
+            <abstract-schema-name>InventoryCostSetup</abstract-schema-name>
+            <cmp-field>
+                <field-name>costType</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>status</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>whcode</field-name>
+            </cmp-field>
+            <primkey-field>costType</primkey-field>
+            <query>
+                <query-method>
+                    <method-name>findByCostType</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(i) FROM InventoryCostSetup AS i WHERE i.costType = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByStatus</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(i) FROM InventoryCostSetup AS i WHERE i.status = ?1</ejb-ql>
+            </query>
+              <query>
+                <query-method>
+                    <method-name>findByWhcode</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(i) FROM InventoryCostSetup AS i WHERE i.whcode = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByTypeAndStatus</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(i)
+FROM InventoryCostSetup AS i WHERE i.costType = ?1 and i.status = ?2</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findAll</method-name>
+                    <method-params/>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(i)
+FROM InventoryCostSetup AS i</ejb-ql>
+            </query>
+            </entity>
+        <entity>
+            <description>jdbc:mysql://localhost:3306/control [root on Default schema]</description>
+            <display-name>StockInventoryEditionsEB</display-name>
+            <ejb-name>StockInventoryEditionsBean</ejb-name>
+            <local-home>stockcontrolentity.StockInventoryEditionsLocalHome</local-home>
+            <local>stockcontrolentity.StockInventoryEditionsLocal</local>
+            <ejb-class>stockcontrolentity.StockInventoryEditionsBean</ejb-class>
+            <persistence-type>Container</persistence-type>
+            <prim-key-class>java.lang.String</prim-key-class>
+            <reentrant>false</reentrant>
+            <abstract-schema-name>StockInventoryEditions</abstract-schema-name>
+            <cmp-field>
+                <field-name>id</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>editionName</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>editionStatus</field-name>
+            </cmp-field>
+            <primkey-field>id</primkey-field>
+            <query>
+                <query-method>
+                    <method-name>findById</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM StockInventoryEditions AS s WHERE s.id = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByEditionName</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM StockInventoryEditions AS s WHERE s.editionName = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByEditionStatus</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM StockInventoryEditions AS s WHERE s.editionStatus = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByAll</method-name>
+                    <method-params/>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM StockInventoryEditions AS s</ejb-ql>
+            </query>
+
+            </entity>
+        <entity>
+            <description>jdbc:mysql://localhost:3306/control [root on Default schema]</description>
+            <display-name>WarehouseEB</display-name>
+            <ejb-name>WarehouseBean</ejb-name>
+            <local-home>stockcontrolentity.WarehouseLocalHome</local-home>
+            <local>stockcontrolentity.WarehouseLocal</local>
+            <ejb-class>stockcontrolentity.WarehouseBean</ejb-class>
+            <persistence-type>Container</persistence-type>
+            <prim-key-class>java.lang.String</prim-key-class>
+            <reentrant>false</reentrant>
+            <abstract-schema-name>Warehouse</abstract-schema-name>
+            <cmp-field>
+                <field-name>whcode</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>houseName</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>dateCreated</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>status</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>address</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>capacity</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>del</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>bcode</field-name>
+            </cmp-field>
+            <primkey-field>whcode</primkey-field>
+            <query>
+                <query-method>
+                    <method-name>findByWhcode</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(w) FROM Warehouse AS w WHERE w.whcode = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByHouseName</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(w) FROM Warehouse AS w WHERE w.houseName = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByDateCreated</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(w) FROM Warehouse AS w WHERE w.dateCreated = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByStatus</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(w) FROM Warehouse AS w WHERE w.status = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByAddress</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(w) FROM Warehouse AS w WHERE w.address = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByCapacity</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(w) FROM Warehouse AS w WHERE w.capacity = ?1</ejb-ql>
+            </query>
+              <query>
+                <query-method>
+                    <method-name>findByDel</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(w) FROM Warehouse AS w WHERE w.del = ?1</ejb-ql>
+            </query>
+                <query>
+                <query-method>
+                    <method-name>findByBcode</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(w) FROM Warehouse AS w WHERE w.bcode = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByAll</method-name>
+                     <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(w)
+FROM Warehouse AS w WHERE w.del = ?1</ejb-ql>
+            </query>
+            </entity>
+        <entity>
+            <description>jdbc:mysql://localhost:3309/inventory [root on Default schema]</description>
+            <display-name>BranchEB</display-name>
+            <ejb-name>BranchBean</ejb-name>
+            <local-home>stockcontrolentity.BranchLocalHome</local-home>
+            <local>stockcontrolentity.BranchLocal</local>
+            <ejb-class>stockcontrolentity.BranchBean</ejb-class>
+            <persistence-type>Container</persistence-type>
+            <prim-key-class>java.lang.String</prim-key-class>
+            <reentrant>false</reentrant>
+            <abstract-schema-name>Branch</abstract-schema-name>
+            <cmp-field>
+                <field-name>branchCode</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>branchName</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>branchAddress</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>dateCreated</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>branchStatus</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>del</field-name>
+            </cmp-field>
+            <primkey-field>branchCode</primkey-field>
+            <query>
+                <query-method>
+                    <method-name>findByBranchCode</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(b) FROM Branch AS b WHERE b.branchCode = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByBranchName</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(b) FROM Branch AS b WHERE b.branchName = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByBranchAddress</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(b) FROM Branch AS b WHERE b.branchAddress = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByDateCreated</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(b) FROM Branch AS b WHERE b.dateCreated = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByBranchStatus</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(b) FROM Branch AS b WHERE b.branchStatus = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByAll</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(b)
+FROM Branch AS b WHERE b.del = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByBranchCode</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(b) FROM Branch AS b WHERE b.branchCode = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByBranchName</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(b) FROM Branch AS b WHERE b.branchName = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByBranchAddress</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(b) FROM Branch AS b WHERE b.branchAddress = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByDateCreated</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(b) FROM Branch AS b WHERE b.dateCreated = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByBranchStatus</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(b) FROM Branch AS b WHERE b.branchStatus = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByDel</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(b) FROM Branch AS b WHERE b.del = ?1</ejb-ql>
+            </query>
+            </entity>
+        <entity>
+            <description>jdbc:mysql://localhost:3306/control [root on Default schema]</description>
+            <display-name>StocktransferEB</display-name>
+            <ejb-name>StocktransferBean</ejb-name>
+            <local-home>stockcontrolentity.StocktransferLocalHome</local-home>
+            <local>stockcontrolentity.StocktransferLocal</local>
+            <ejb-class>stockcontrolentity.StocktransferBean</ejb-class>
+            <persistence-type>Container</persistence-type>
+            <prim-key-class>java.lang.Integer</prim-key-class>
+            <reentrant>false</reentrant>
+            <abstract-schema-name>Stocktransfer</abstract-schema-name>
+            <cmp-field>
+                <field-name>sno</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>itemcode</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>itemname</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>quantity</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>datetransferred</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>status</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>fromwarehouse</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>destination</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>barcode</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>makeorbuy</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>category</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>unitprice</field-name>
+            </cmp-field>
+            <primkey-field>sno</primkey-field>
+            <query>
+                <query-method>
+                    <method-name>findBySno</method-name>
+                    <method-params>
+                        <method-param>java.lang.Integer</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Stocktransfer AS s WHERE s.sno = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByItemcode</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Stocktransfer AS s WHERE s.itemcode = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByItemname</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Stocktransfer AS s WHERE s.itemname = ?1</ejb-ql>
+            </query>
+             <query>
+                <query-method>
+                    <method-name>findByDatetransferred</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Stocktransfer AS s WHERE s.datetransferred = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByStatus</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Stocktransfer AS s WHERE s.status = ?1</ejb-ql>
+            </query>
+              <query>
+                <query-method>
+                    <method-name>findByMakeorbuy</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Stocktransfer AS s WHERE s.makeorbuy = ?1</ejb-ql>
+            </query>
+               <query>
+                <query-method>
+                    <method-name>findByQuantity</method-name>
+                    <method-params>
+                        <method-param>java.lang.Integer</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Stocktransfer AS s WHERE s.quantity = ?1</ejb-ql>
+            </query>
+              <query>
+                <query-method>
+                    <method-name>findByUnitprice</method-name>
+                    <method-params>
+                        <method-param>java.lang.Float</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Stocktransfer AS s WHERE s.unitprice = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByDestination</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Stocktransfer AS s WHERE s.destination = ?1</ejb-ql>
+            </query>
+                 <query>
+                <query-method>
+                    <method-name>findByBarcode</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Stocktransfer AS s WHERE s.barcode = ?1</ejb-ql>
+            </query>
+
+            <query>
+                <query-method>
+                    <method-name>findByCategory</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Stocktransfer AS s WHERE s.category = ?1</ejb-ql>
+            </query>
+
+            <query>
+                <query-method>
+                    <method-name>findByFromwarehouse</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Stocktransfer AS s WHERE s.fromwarehouse = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method><method-name>findByDestinationAndStatus</method-name>
+                <method-params><method-param>java.lang.String</method-param>
+                <method-param>java.lang.String</method-param>
+                </method-params></query-method>
+                <ejb-ql>SELECT OBJECT(s) FROM Stocktransfer AS s WHERE s.destination = ?1 AND s.status = ?2</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>ejbSelectByMax</method-name>
+                    <method-params/>
+                </query-method>
+                <ejb-ql>SELECT MAX(s.sno)
+FROM Stocktransfer AS s</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByDateAndWhcode</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(s)
+FROM Stocktransfer AS s WHERE s.datetransferred = ?1 and s.destination = ?2</ejb-ql>
+            </query>
+         
+            </entity>
+        <entity>
+            <description>jdbc:mysql://localhost:3309/inventory [root on Default schema]</description>
+            <display-name>CategoryEB</display-name>
+            <ejb-name>CategoryBean</ejb-name>
+            <local-home>stockcontrolentity.CategoryLocalHome</local-home>
+            <local>stockcontrolentity.CategoryLocal</local>
+            <ejb-class>stockcontrolentity.CategoryBean</ejb-class>
+            <persistence-type>Container</persistence-type>
+            <prim-key-class>java.lang.String</prim-key-class>
+            <reentrant>false</reentrant>
+            <abstract-schema-name>Category</abstract-schema-name>
+            <cmp-field>
+                <field-name>categorycode</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>stockItemType</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>categorydescription</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>status</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>del</field-name>
+            </cmp-field>
+            <primkey-field>categorycode</primkey-field>
+            <query>
+                <query-method>
+                    <method-name>findByCategorycode</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM Category AS c WHERE c.categorycode = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByStockItemType</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM Category AS c WHERE c.stockItemType = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByCategorydescription</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM Category AS c WHERE c.categorydescription = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByStatus</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM Category AS c WHERE c.status = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByDel</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM Category AS c WHERE c.del = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByAll</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c)
+FROM Category AS c WHERE c.del = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findBystockItemTypeAndDel</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c)
+FROM Category As c WHERE c.stockItemType LIKE ?1 and c.del = ?2</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByCategorycode</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM Category AS c WHERE c.categorycode = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByStockItemType</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM Category AS c WHERE c.stockItemType = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByCategorydescription</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM Category AS c WHERE c.categorydescription = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByStatus</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM Category AS c WHERE c.status = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByDel</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM Category AS c WHERE c.del = ?1</ejb-ql>
+            </query>
+            </entity>
+        <entity>
+            <description>jdbc:mysql://localhost:3306/control [root on Default schema]</description>
+            <display-name>ItemsEB</display-name>
+            <ejb-name>ItemsBean</ejb-name>
+            <local-home>stockcontrolentity.ItemsLocalHome</local-home>
+            <local>stockcontrolentity.ItemsLocal</local>
+            <ejb-class>stockcontrolentity.ItemsBean</ejb-class>
+            <persistence-type>Container</persistence-type>
+            <prim-key-class>java.lang.String</prim-key-class>
+            <reentrant>false</reentrant>
+            <abstract-schema-name>Items</abstract-schema-name>
+            <cmp-field>
+                <field-name>itemcode</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>itemname</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>category</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>makeorbuy</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>description</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>authorisation</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>dateadded</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>del</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>whcode</field-name>
+            </cmp-field>
+            <primkey-field>itemcode</primkey-field>
+            <query>
+                <query-method>
+                    <method-name>findByItemcode</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(i) FROM Items AS i WHERE i.itemcode = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByItemname</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(i) FROM Items AS i WHERE i.itemname = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByCategory</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(i) FROM Items AS i WHERE i.category = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByMakeorbuy</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(i) FROM Items AS i WHERE i.makeorbuy = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByDescription</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(i) FROM Items AS i WHERE i.description = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByAuthorisation</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(i) FROM Items AS i WHERE i.authorisation = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByDel</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(i) FROM Items AS i WHERE i.del = ?1</ejb-ql>
+            </query>
+              <query>
+                <query-method>
+                    <method-name>findByAll</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(i) FROM Items AS i </ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByDateadded</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(i)
+FROM Items AS i WHERE i.dateadded = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByItemName</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(i)
+FROM Items AS i WHERE i.itemname LIKE ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByMakeorbuyAndDel</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(i)
+FROM Items AS i WHERE i.makeorbuy = ?1 and i.del = ?2</ejb-ql>
+            </query>
+            </entity>
+      <entity>
+            <display-name>GoodslimitsEB</display-name>
+            <ejb-name>GoodslimitsBean</ejb-name>
+            <local-home>stockcontrolentity.GoodslimitsLocalHome</local-home>
+            <local>stockcontrolentity.GoodslimitsLocal</local>
+            <ejb-class>stockcontrolentity.GoodslimitsBean</ejb-class>
+            <persistence-type>Container</persistence-type>
+            <prim-key-class>java.lang.String</prim-key-class>
+            <reentrant>false</reentrant>
+            <abstract-schema-name>Goodslimits</abstract-schema-name>
+            <cmp-field>
+                <field-name>commodityCode</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>lowerLimit</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>upperLimit</field-name>
+            </cmp-field>
+            <primkey-field>commodityCode</primkey-field>
+            <query>
+                <query-method>
+                    <method-name>findByCommodityCode</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(g) FROM Goodslimits AS g WHERE g.commodityCode = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByLowerLimit</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(g) FROM Goodslimits AS g WHERE g.lowerLimit = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByUpperLimit</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(g) FROM Goodslimits AS g WHERE g.upperLimit = ?1</ejb-ql>
+            </query>
+            </entity>
+       
+        
+        <entity>
+            <display-name>DistributorEB</display-name>
+            <ejb-name>DistributorBean</ejb-name>
+            <local-home>stockcontrolentity.DistributorLocalHome</local-home>
+            <local>stockcontrolentity.DistributorLocal</local>
+            <ejb-class>stockcontrolentity.DistributorBean</ejb-class>
+            <persistence-type>Container</persistence-type>
+            <prim-key-class>java.lang.String</prim-key-class>
+            <reentrant>false</reentrant>
+            <abstract-schema-name>Distributor</abstract-schema-name>
+            <cmp-field>
+                <field-name>username</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>password</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>surname</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>firstName</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>middleName</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>lastName</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>occupation</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>officeAddress</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>phoneNumber</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>nationality</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>stateororigin</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>lga</field-name>
+            </cmp-field>
+            <primkey-field>username</primkey-field>
+            <query>
+                <query-method>
+                    <method-name>findByUsername</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(d) FROM Distributor AS d WHERE d.username = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByPassword</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(d) FROM Distributor AS d WHERE d.password = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findBySurname</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(d) FROM Distributor AS d WHERE d.surname = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByFirstName</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(d) FROM Distributor AS d WHERE d.firstName = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByMiddleName</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(d) FROM Distributor AS d WHERE d.middleName = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByLastName</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(d) FROM Distributor AS d WHERE d.lastName = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByOccupation</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(d) FROM Distributor AS d WHERE d.occupation = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByOfficeAddress</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(d) FROM Distributor AS d WHERE d.officeAddress = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByPhoneNumber</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(d) FROM Distributor AS d WHERE d.phoneNumber = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByNationality</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(d) FROM Distributor AS d WHERE d.nationality = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByStateororigin</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(d) FROM Distributor AS d WHERE d.stateororigin = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByLga</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(d) FROM Distributor AS d WHERE d.lga = ?1</ejb-ql>
+            </query>
+            </entity>
+       
+          </enterprise-beans>
+    <assembly-descriptor>
+
+        <container-transaction>
+            <method>
+                <ejb-name>UnitBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+        <container-transaction>
+            <method>
+                <ejb-name>UserloginBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+        <container-transaction>
+            <method>
+                <ejb-name>StaffBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+        <container-transaction>
+            <method>
+                <ejb-name>NationalityBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+        <container-transaction>
+            <method>
+                <ejb-name>StockBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+        <container-transaction>
+            <method>
+                <ejb-name>RolesBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+        <container-transaction>
+            <method>
+                <ejb-name>StateoforiginBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+        <container-transaction>
+            <method>
+                <ejb-name>SupplyBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+        <container-transaction>
+            <method>
+                <ejb-name>DistributorBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+        <container-transaction>
+            <method>
+                <ejb-name>LgaBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+         <container-transaction>
+            <method>
+                <ejb-name>ReportsBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+        <container-transaction>
+            <method>
+                <ejb-name>MaterialsBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+        <container-transaction>
+            <method>
+                <ejb-name>RequitionBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+        <container-transaction>
+            <method>
+                <ejb-name>DbBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+        <container-transaction>
+            <method>
+                <ejb-name>LimitsBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+
+        <container-transaction>
+            <method>
+                <ejb-name>SectionsBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+      
+        <container-transaction>
+            <method>
+                <ejb-name>ProductionhistoryBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+        <container-transaction>
+            <method>
+                <ejb-name>StockhistoryBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+        <container-transaction>
+            <method>
+                <ejb-name>ProductionhistoryBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+        <container-transaction>
+            <method>
+                <ejb-name>CostAnalysisBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+        <container-transaction>
+            <method>
+                <ejb-name>InventoryCostBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+        <container-transaction>
+            <method>
+                <ejb-name>InventoryCostSetupBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+        <container-transaction>
+            <method>
+                <ejb-name>StockInventoryEditionsBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+        <container-transaction>
+            <method>
+                <ejb-name>WarehouseBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+        <container-transaction>
+            <method>
+                <ejb-name>BranchBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+        <container-transaction>
+            <method>
+                <ejb-name>StocktransferBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+        <container-transaction>
+            <method>
+                <ejb-name>CategoryBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+        <container-transaction>
+            <method>
+                <ejb-name>ItemsBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+
+        <container-transaction>
+            <method>
+                <ejb-name>UnitBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+        <container-transaction>
+            <method>
+                <ejb-name>SupplyBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+        <container-transaction>
+            <method>
+                <ejb-name>GoodslimitsBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+         <container-transaction>
+            <method>
+                <ejb-name>ProductionBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+
+        <container-transaction>
+            <method>
+                <ejb-name>MaterialsBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+        <container-transaction>
+            <method>
+                <ejb-name>RolesBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+       <container-transaction>
+            <method>
+                <ejb-name>RequitionBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+
+      ]
+
+        <container-transaction>
+            <method>
+                <ejb-name>CategoryBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+        <container-transaction>
+            <method>
+                <ejb-name>BranchBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+        </assembly-descriptor>
+    </ejb-jar>

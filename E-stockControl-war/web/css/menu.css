@@ -1,0 +1,24 @@
+<!-- This script and many more are available free online at -->
+<!-- The JavaScript Source!! http://javascript.internet.com -->
+
+<style type="text/css"><!--
+#containerul, #containerul ul{
+  text-align:left;
+  margin:0; /* Removes browser default margins applied to the lists. */
+  padding:0; /* Removes browser default padding applied to the lists. */
+}
+
+#containerul li{
+  margin:0 0 0 0; /* A left margin to indent the list items and give the menu a sense of structure. */
+  padding:0; /* Removes browser default padding applied to the list items. */
+  list-style-type:none; /* Removes the bullet point that usually goes next to each item in a list. */
+}
+
+#containerul .symbols{ /* Various styles to position the symbols next to the items in the menu. */
+  float:left;
+  width:12px;
+  height:1em;
+  background-position:0 50%;
+  background-repeat:no-repeat;
+}
+--></style>

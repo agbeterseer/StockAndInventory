@@ -1,0 +1,70 @@
+body {
+  font-size:12px;
+  font-family : Verdana,Arial,Geneva,sans-serif;
+  color: #101818;
+  background-color: white;
+  margin:0;
+}
+ul {
+	padding:15px;
+	margin:0px;
+	font:12px Verdana, Arial, Helvetica, sans-serif;
+	color:#006600;
+}
+li a {
+	font:10px Verdana, Arial, Helvetica, sans-serif;
+}
+li a:link{
+	color:#000000;
+}
+a { text-decoration: none }
+
+a:link { color: #336633} 
+
+a:visited { color: #336633 }
+
+a:active { color: #336633}
+
+a:hover { 
+  text-decoration: underline;
+  color: #f5beb4;
+  }
+
+#loginbox {
+    position: relative;
+    width: 200px;
+    margin: 2% auto;
+	/*border: 1px solid #009900;*/
+    padding:2px 50px 2px 50px;
+	background-color:#fff;
+}
+#loginbox input {
+	width:180px;
+	background-color:#f9f9f9;
+}
+#tm {
+	position: relative;
+    width: 200px;
+    margin:auto;
+    padding:50px;
+}
+.top {
+	background:url(../images/top.gif) no-repeat;
+}
+.but {
+	background:url(../images/but.gif) no-repeat;
+}
+
+#footer {
+  clear: left;
+  width: 100%;
+  text-align: center;
+  padding-top: 1em;
+}
+.menus {
+	border:1px solid #eee;
+	width:auto;
+}
+#header {
+	font: 30px "Trebuchet MS", Verdana; color: #0000CC; font-weight:normal; padding-left:70px;
+}

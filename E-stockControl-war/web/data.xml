@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<Banner bannerWidth="419" bannerHeight="217" bannerBackgroundColor="" textSize="18" textColor="" textAreaWidth="" textLineSpacing="0" textLetterSpacing="-0.5" textMarginLeft="26" textMarginBottom="5" textBackgroundBlur="true" textBackgroundColor="000000" textBackgroundTransparency="20" transitionType="2" transitionRandomEffects="no" transitionDelayTimeFixed="8" transitionDelayTimePerWord="0" transitionSpeed="10" transitionBlur="yes" showTimerClock="yes" showNextButton="yes" showBackButton="yes" showNumberButtons="yes" showNumberButtonsAlways="yes" showNumberButtonsHorizontal="yes" showNumberButtonsAscending="no" showPlayPauseOnTimer="yes" alignButtonsLeft="no" alignTextTop="no" autoPlay="yes" imageResizeToFit="yes" imageRandomizeOrder="no">
+  <item buttonLabel="" image="images/preview.jpg" link="#" target="_self" delay="" textBlend="no" />
+  <item buttonLabel="" image="images/inventory_large.jpg" link="#" target="_self" delay="" textBlend="no" />
+  <item buttonLabel="" image="images/Inventory-Management.jpg" link="#" target="_self" delay="" textBlend="no" />
+  <item buttonLabel="" image="images/j0390128.jpg" link="#" target="_self" delay="" textBlend="no" />
+  </Banner>

@@ -1,0 +1,134 @@
+<%-- 
+    Document   : addMaterials
+    Created on : Jun 17, 2011, 11:25:12 AM
+    Author     : Terseer
+--%>
+
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<%@include  file="lookUp.jsp"%>
+<%try{%>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Inspiration Images|add Materials</title>
+              <link rel="stylesheet" href="./style.css" type="text/css" media="screen" />
+		<!--[if IE 6]><link rel="stylesheet" href="./style.ie6.css" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 7]><link rel="stylesheet" href="./style.ie7.css" type="text/css" media="screen" /><![endif]-->
+        <script type="text/ecmascript" language="javascript" src="js/validation.js"></script>
+    </head>
+    <body>
+         
+        <%
+          if(request.getParameter("button") !=null){
+            float a = 0.0F;
+            String materialname = request.getParameter("materialname");
+            String dateused = request.getParameter("dateused");
+            String materialtype = request.getParameter("materialtype");
+            String quantity = request.getParameter("quantity");
+            String amount = request.getParameter("amount");
+            String commodityname = request.getParameter("commodityname");
+                //Float f = new Float(amount);
+        
+        try{
+                msg = scl.addMaterial(new HelpMaterials(materialname,materialtype,quantity,dateused,new Float(amount),username,commodityname));
+                style = "success";
+                //String materialName, String materialType, String quantityUsed, String dateUsed, Float amount, String manager
+         }catch(Exception ex){
+                System.out.println();
+                msg = msg;
+                style = "error";
+        }
+        }
+        %>
+  <fieldset style="width:800px;"><legend class="tableheader">Add Materials</legend>
+  <form action="" method="post" name="form1" onsubmit="return validate(this);">
+  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td colspan="4" class="<%=style%>"><%=msg%></td>
+    </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="tab_lebel">Item</td>
+    <td><label></label>
+      <select name="commodityname" id="commodityname" style="width:200px;" >
+        <option  value="">--Select one Commodity--</option>
+        <%
+                            try{
+                            ArrayList list =scl.viewAllCommodities();
+                           Iterator i = list.iterator();
+                            while(i.hasNext()){
+                            hhcc = (Helpcommodity)i.next();
+                            %>
+        <option value="<%=hhcc.getItemcode()%>"<%=(request.getParameter("commodityname") != null && request.getParameter("commodityname").equalsIgnoreCase(hhcc.getItemcode())) ? new String("selected") : new String("")%>><%=hhcc.getItemname()%></option>
+        <%
+                            }
+                            }catch(Exception ex){
+                            ex.getMessage();
+                            }
+        %>
+      </select></td>
+    <td class="tab_lebel">DateUsed</td>
+    <td><label>
+    <input type="text" name="dateused" id="dateused" style="width:200px;">
+    <a href="javascript:void(0)" onclick="if(self.gfPop)gfPop.fPopCalendar(document.form1.dateused);return false;" ><img name="popcal" align="absmiddle" src="popcalendar/calbtn.gif" width="34" height="22" border="0" alt=""></a></label></td>
+  </tr>
+  <tr>
+    <td class="tab_lebel">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="tab_lebel">&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="tab_lebel">MaterialName</td>
+    <td><input type="text" name="materialname" id="materialname" style="width:200px;"></td>
+    <td><span class="tab_lebel">Cost</span></td>
+    <td><input type="text" name="amount" id="amount" style="width:200px;"></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><span class="tab_lebel">MaterialType</span></td>
+    <td><input type="text" name="materialtype" id="materialtype" style="width:200px;"></td>
+    <td class="tab_lebel">Size/Quantity</td>
+    <td><label>
+      <input type="text" name="quantity" id="quantity" style="width:200px;">
+    </label></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><input type="submit" name="button" id="button" value="Submit" class="bot"></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+</form>
+      </fieldset>
+ <!--  PopCalendar(tag name and id must match) Tags should not be enclosed in tags other than the html body tag. -->
+        <iframe width=174 height=189 name="gToday:normal:agenda.js" id="gToday:normal:agenda.js" src="popcalendar/ipopeng.htm" scrolling="no" frameborder="0" style="visibility:visible; z-index:999; position:absolute; top:-500px; left:-500px;">
+        </iframe>
+   </body>
+</html>
+<%
+    }catch(Exception e){
+  response.sendRedirect("errorpage.jsp");
+   }
+%>

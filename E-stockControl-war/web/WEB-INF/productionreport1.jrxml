@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="productionreport1.jrxml" pageWidth="900" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     productionbean.`commodityType` AS productionbean_commodityType,
+     productionbean.`quantityProduced` AS productionbean_quantityProduced,
+     productionbean.`matrialsUsed` AS productionbean_matrialsUsed,
+     productionbean.`dateOfProduced` AS productionbean_dateOfProduced,
+     productionbean.`manager` AS productionbean_manager,
+     productionbean.`commodityName` AS productionbean_commodityName
+FROM
+     `productionbean` productionbean]]>
+	</queryString>
+	<field name="productionbean_commodityType" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="productionbean_commodityName" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="productionbean_matrialsUsed" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="productionbean_quantityProduced" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="productionbean_dateOfProduced" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="productionbean_manager" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="58">
+			<line>
+				<reportElement x="0" y="8" width="860" height="1"/>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="51" width="860" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="241" y="16" width="424" height="35"/>
+				<textElement textAlignment="Center">
+					<font size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Production Report]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band/>
+	</pageHeader>
+	<columnHeader>
+		<band height="18">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="150" height="18" forecolor="#FFFFFF" backcolor="#999999"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Commodity Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="150" y="0" width="162" height="18" forecolor="#FFFFFF" backcolor="#999999"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Commodity Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="312" y="0" width="148" height="18" forecolor="#FFFFFF" backcolor="#999999"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Materia Used]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="460" y="0" width="148" height="18" forecolor="#FFFFFF" backcolor="#999999"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Quantity Produced]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="608" y="0" width="116" height="18" forecolor="#FFFFFF" backcolor="#999999"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Date Of Production]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="724" y="0" width="136" height="18" forecolor="#FFFFFF" backcolor="#999999"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Autorization]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<textField>
+				<reportElement x="0" y="0" width="150" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{productionbean_commodityType}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="0" width="162" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{productionbean_commodityName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="312" y="0" width="148" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{productionbean_matrialsUsed}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="460" y="0" width="148" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{productionbean_quantityProduced}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="608" y="0" width="116" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{productionbean_dateOfProduced}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="724" y="0" width="136" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{productionbean_manager}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="26">
+			<textField evaluationTime="Report" pattern="" isBlankWhenNull="false">
+				<reportElement key="textField" x="516" y="6" width="36" height="19" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["" + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="textField" x="342" y="6" width="170" height="19" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Page " + $V{PAGE_NUMBER} + " of "]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="textField" x="1" y="6" width="209" height="19" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[new Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>
